@@ -1,0 +1,23 @@
+{% extends "shop/base.html" %}
+{% block title %}ตะกร้าสินค้า{% endblock %}
+{% block content %}
+<h2>ตะกร้าสินค้า</h2>
+<form action="{% url 'shop:cart_update' %}" method="post">
+  {% csrf_token %}
+  <table>
+    <thead><tr><th>สินค้า</th><th>จำนวน</th><th>รวม</th></tr></thead>
+    <tbody>
+      {% for it in items %}
+        <tr>
+          <td>{{ it.product.name }}</td>
+          <td><input type="number" name="qty_{{ it.product.id }}" value="{{ it.quantity }}" min="0" max="{{ it.product.stock }}"></td>
+          <td>{{ it.line_total }} บาท</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <p>รวมย่อย: {{ subtotal }} บาท</p>
+  <button type="submit">อัปเดตตะกร้า</button>
+</form>
+<p><a href="{% url 'shop:checkout' %}">ไปชำระเงิน</a></p>
+{% endblock %}

@@ -1,0 +1,54 @@
+    <!-- QR Code Modal -->
+    <div id="qrModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl shadow-xl p-8 w-full max-w-md">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">📱 QR Code สำหรับชำระเงิน</h2>
+                <p class="text-gray-600">สแกน QR Code เพื่อชำระเงิน</p>
+            </div>
+            
+            <div class="text-center mb-6">
+                <!-- QR Code placeholder -->
+                <div class="bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg p-8 mb-4">
+                    <div class="text-6xl mb-2">📱</div>
+                    <div class="text-lg font-bold text-gray-800" id="qrAmount">0 บาท</div>
+                    <div class="text-sm text-gray-600 mb-4">QR Code สำหรับ Google Pay</div>
+                    
+                    <!-- Simulated QR Code -->
+                    <div class="bg-white border rounded-lg p-4 mb-4 inline-block">
+                        <div class="w-32 h-32 bg-black relative">
+                            <!-- QR Code pattern simulation -->
+                            <div class="absolute inset-2 bg-white"></div>
+                            <div class="absolute top-2 left-2 w-6 h-6 bg-black"></div>
+                            <div class="absolute top-2 right-2 w-6 h-6 bg-black"></div>
+                            <div class="absolute bottom-2 left-2 w-6 h-6 bg-black"></div>
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-black"></div>
+                            <!-- Random pattern dots -->
+                            <div class="absolute top-4 left-8 w-1 h-1 bg-black"></div>
+                            <div class="absolute top-6 left-12 w-1 h-1 bg-black"></div>
+                            <div class="absolute top-8 left-6 w-1 h-1 bg-black"></div>
+                            <div class="absolute top-10 left-14 w-1 h-1 bg-black"></div>
+                            <div class="absolute top-12 left-10 w-1 h-1 bg-black"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border rounded-lg p-4">
+                        <div class="text-xs text-gray-500 mb-2">Google Pay / PromptPay</div>
+                        <div class="font-mono text-sm">0970528823</div>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-600">สแกน QR Code ด้วย Google Pay หรือแอปธนาคาร</p>
+                <p class="text-xs text-gray-500 mt-2">หลังสแกนแล้ว กรุณากดปุ่ม "ชำระเงินแล้ว"</p>
+            </div>
+            
+            <div class="flex space-x-3">
+                <button id="confirmQrPaymentBtn" class="flex-1 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition duration-200 font-medium">
+                    ✅ ชำระเงินแล้ว
+                </button>
+                <button id="cancelQrPaymentBtn" class="flex-1 bg-gray-500 text-white py-3 rounded-lg hover:bg-gray-600 transition duration-200 font-medium">
+                    ยกเลิก
+                </button>
+            </div>
+        </div>
+    </div>
+
+    
